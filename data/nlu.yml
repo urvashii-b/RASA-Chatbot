@@ -1,0 +1,109 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey there
+    - hey
+    - greetings
+    - hello counselai
+    - yes
+    - y
+    - Y
+    - let's go
+    - lessgo
+    - hey dude
+    - yesss
+    - yess
+- intent: provide_name
+  examples: |
+    - my name is [Urvashi](name)
+    - you can call me [Nishank](name)
+    - i am [Pragya](name)
+    - call me [Teresha](name)
+    - i'm [Aditya](name)
+    - my name's [Suryan](name)
+    - [Mary](name)
+    - let's go
+    - [urvashi]{"entity": "name", "value": "Urvashi"}
+
+- intent: provide_age
+  examples: |
+    - i am [16](age) years old
+    - [18](age) years
+    - i'm [15](age)
+    - [22](age)
+    - i've been alive for [21](age) years
+    - [17](age) years old
+    - i'm [21](age)
+- intent: provide_location
+  examples: |
+    - i'm from [New York](location)
+    - i live in [San Francisco](location)
+    - [Los Angeles](location) is my home
+    - currently in [Chicago](location)
+    - based in [San Francisco](location)
+    - [Hyderabad](location)
+    - [hyderabad]{"entity": "location", "value": "Hyderabad"}
+- intent: list_hobbies
+  examples: |
+    - i love [reading](hobby) and [swimming](hobby)
+    - my hobbies are [coding](hobby) and [painting](hobby)
+    - i enjoy [gaming](hobby)
+    - i like to [cook](hobby)
+    - i love [painting](hobby)
+    - [Reading](hobby) and [swimming](hobby)
+    - my hobbies include [coding](hobby)
+    - everything
+- intent: mention_interests
+  examples: |
+    - I am interested in [medicine](interest)
+    - I love [tech](interest)
+    - My passion is [business](interest)
+    - [Arts](interest) and [music](interest) interest me
+    - I'm interested in [medicine](interest)
+    - Passionate about [music](interest)
+    - I like [tech](interest)
+- intent: provide_dislikes
+  examples: |
+    - I dislike [math](dislike)
+    - I find [writing](dislike) tedious
+    - Not a fan of [public speaking](dislike)
+    - I hate [cooking](dislike)
+    - I struggle with [math](dislike)
+    - Weak in [management](dislike)
+- intent: list_skills
+  examples: |
+    - I'm good at [Python](skill)
+    - I can [design websites](skill)
+    - My skills include [data analysis](skill) and [SEO](skill)
+    - I excel in [project management](skill)
+    - Skilled in [Python](skill)
+    - I can do [project management](skill)
+- intent: expected_salary
+  examples: |
+    - I am expecting around [$80,000](expected_salary) annually
+    - Minimum [$50,000](expected_salary)
+    - I'd like at least [$60,000](expected_salary) per year
+    - Hoping for around [$100,000](expected_salary)
+    - Around [$50,000](salary)
+    - Ideally, [$75,000](salary)
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - farewell
+    - see you later
+    - byee
+    - byeee
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - have a nice day
+    - you too
+    - see you around
+    - bye bye
+    - okay thank you
+    - okay ty

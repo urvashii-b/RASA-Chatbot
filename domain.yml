@@ -1,0 +1,60 @@
+version: '3.1'
+
+intents:
+- expected_salary
+- goodbye
+- greet
+- list_hobbies
+- list_skills
+- mention_interests
+- provide_age
+- provide_dislikes
+- provide_location
+- provide_name
+
+responses:
+  utter_greet:
+  - text: Hey there, welcome to CounselAi! We're here to help you find your ideal career path. Ready?
+  - text: Hello and welcome to CounselAi! Our mission is to assist you in discovering the perfect career path. Ready to begin?
+  - text: Hey there, and welcome to CounselAi, your career navigation experts. Ready to chart your course?
+  utter_provide_name:
+  - text: Fantastic! What should we call you?
+  - text: Perfect! What's the name you'd like us to use during our conversation?
+  - text: Perfect! What is your name?
+  utter_provide_age:
+  - text: Great, how many spins have you taken around the sun? Or simply, what's your age?
+  utter_provide_location:
+  - text: So, where are you at these days? I mean, which city are you currently calling home?
+  utter_list_hobbies:
+  - text: What do you enjoy doing? Reading, painting, or maybe a bit of coding? Just tell us your hobbies {name}.
+  utter_mention_interests:
+  - text: What draws your attention career-wise? Whether it's in medicine, tech, business, or something else entirely, we'd love to hear about your passions.
+  utter_provide_dislikes:
+  - text: We all have areas where we can improve. Can you share some skills or tasks you find challenging or basically just don't enjoy?
+  - text: Nobody's perfect! Are there specific skills or tasks you'd rather avoid or find difficult?
+  utter_list_skills:
+  - text: Tell us, what are your standout skills/talents?!
+  utter_expected_salary:
+  - text: Money matters, right? Do you have a rough estimate in mind for your future paycheck?
+  utter_goodbye:
+  - text: You've been stellar. Thanks for sharing! Our ML model will churn out some insights for you shortly :)
+  - text: Thank you for sharing! You've been fantastic. Our ML model will process your data and generate valuable insights shortly :)
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+entities:
+- name
+- location
+- age
+actions:
+- utter_greet
+- utter_provide_name
+- utter_list_hobbies
+- utter_provide_age
+- utter_provide_location

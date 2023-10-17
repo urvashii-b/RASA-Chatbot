@@ -1,0 +1,106 @@
+version: "3.1"
+
+stories:
+- story: Ask for name after greeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: provide_name
+      entities:
+        - name: "John"
+    - action: utter_provide_name
+    - intent: provide_age
+      entities:
+        - age: "20"
+    - action: utter_provide_age
+
+- story: Collect age after the name is provided
+  steps:
+    - intent: provide_name
+      entities:
+        - name: "John"
+    - action: utter_provide_name
+    - intent: provide_age
+      entities:
+        - age: "20"
+    - action: utter_provide_age
+    - intent: provide_location
+      entities:
+        - location: "New York"
+    - action: utter_provide_location
+
+- story: Collect location after the age is provided
+  steps:
+    - intent: provide_age
+      entities:
+        - age: "25"  # You can specify the user's age here
+    - action: utter_provide_age
+    - intent: provide_location
+      entities:
+        - location: "New York"  # You can specify the user's location here
+    - action: utter_provide_location
+
+- story: List hobbies after location
+  steps:
+    - intent: provide_location
+      entities:
+        - location: "Los Angeles"  # You can specify the user's location here
+    - action: utter_provide_location
+    - intent: list_hobbies
+      entities:
+        - hobby: "reading"  # You can specify the user's hobbies here
+    - action: utter_list_hobbies
+
+- story: Mention interests after listing hobbies
+  steps:
+    - intent: list_hobbies
+      entities:
+        - hobby: "cooking"  # You can specify the user's hobbies here
+    - action: utter_list_hobbies
+    - intent: mention_interests
+      entities:
+        - interest: "food"  # You can specify the user's interests here
+    - action: utter_mention_interests
+
+- story: Provide dislikes after mentioning interests
+  steps:
+    - intent: mention_interests
+      entities:
+        - interest: "travel"  # You can specify the user's interests here
+    - action: utter_mention_interests
+    - intent: provide_dislikes
+      entities:
+        - dislike: "airplanes"  # You can specify the user's dislikes here
+    - action: utter_provide_dislikes
+
+- story: List skills after providing dislikes
+  steps:
+    - intent: provide_dislikes
+      entities:
+        - dislike: "public speaking"  # You can specify the user's dislikes here
+    - action: utter_provide_dislikes
+    - intent: list_skills
+      entities:
+        - skill: "Python"  # You can specify the user's skills here
+    - action: utter_list_skills
+
+- story: Expected salary after listing skills
+  steps:
+    - intent: list_skills
+      entities:
+        - skill: "programming"  # You can specify the user's skills here
+    - action: utter_list_skills
+    - intent: expected_salary
+      entities:
+        - expected_salary: "75000"  # You can specify the user's expected salary here
+    - action: utter_expected_salary
+
+- story: Goodbye after expected salary
+  steps:
+    - intent: expected_salary
+      entities:
+        - expected_salary: "80000"  # You can specify the user's expected salary here
+    - action: utter_expected_salary
+    - intent: goodbye
+    - action: utter_goodbye
+

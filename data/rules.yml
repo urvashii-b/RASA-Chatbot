@@ -1,0 +1,24 @@
+version: "3.1"
+
+rules:
+
+  # Rule for saying goodbye
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  # Rule for initial greeting
+  - rule: Say hello at the beginning of a conversation
+    steps:
+    - intent: greet
+    - action: utter_greet
+
+  # Rule to handle fallback, for instance when the bot doesn't understand
+  - rule: Fallback
+    steps:
+    - action: action_default_fallback
+  
+
+
+
